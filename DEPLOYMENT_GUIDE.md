@@ -3,7 +3,7 @@
 ## 🚀 Live Project Setup
 
 ### **Admin Access Setup**
-- **Admin Email**: `gunav@example.com`
+- **Admin Email**: `chennakeshavareddy05@gmail.com`
 - **Admin Password**: `Admin@123!`
 - **Login**: Use admin credentials to access 👑 Admin tab
 - **Features**: User management, activity monitoring, statistics

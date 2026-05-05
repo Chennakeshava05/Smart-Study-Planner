@@ -54,7 +54,7 @@ In Vercel Dashboard → Settings → Environment Variables:
 ```env
 GOOGLE_API_KEY=AIzaSyBCNQuANVzNBW0mu1pAI_aSqQHyDAGxtg8
 JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
-ADMIN_EMAIL=gunav@example.com
+ADMIN_EMAIL=chennakeshavareddy05@gmail.com
 NODE_ENV=production
 ```
 

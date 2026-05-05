@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const setupAdmin = async () => {
   try {
-    const adminEmail = process.env.ADMIN_EMAIL || 'gunav@example.com';
+    const adminEmail = process.env.ADMIN_EMAIL || 'chennakeshavareddy05@gmail.com';
     const adminPassword = 'Admin@123!'; // You should change this
     
     // Check if admin already exists
