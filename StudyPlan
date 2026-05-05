@@ -1,0 +1,4 @@
+# Create a new repository on GitHub first, then:
+git remote add origin https://github.com/Chennakeshava04/smart-study-planner.git
+git branch -M main
+git push -u origin main
