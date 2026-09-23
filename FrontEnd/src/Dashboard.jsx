@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from './AuthContext';
+import { parseJsonResponse } from './api';
 import History from './History';
 import AdminDashboard from './AdminDashboard';
 import Share from './Share';
@@ -50,7 +51,7 @@ const Dashboard = () => {
         })
       })
 
-      const data = await response.json()
+      const data = await parseJsonResponse(response)
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to generate schedule')
@@ -87,7 +88,7 @@ const Dashboard = () => {
         })
       })
 
-      const data = await response.json()
+      const data = await parseJsonResponse(response)
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to generate quiz')

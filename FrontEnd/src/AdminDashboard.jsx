@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from './AuthContext';
+import { parseJsonResponse } from './api';
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
@@ -23,7 +24,7 @@ const AdminDashboard = () => {
         }
       });
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to fetch users');
@@ -43,7 +44,7 @@ const AdminDashboard = () => {
         }
       });
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to fetch stats');
@@ -65,7 +66,7 @@ const AdminDashboard = () => {
         }
       });
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to fetch user activities');

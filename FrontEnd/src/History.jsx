@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from './AuthContext';
+import { parseJsonResponse } from './api';
 
 const History = ({ activeTab, setActiveTab, onGenerateQuizFromSchedule }) => {
   const [schedules, setSchedules] = useState([]);
@@ -24,7 +25,7 @@ const History = ({ activeTab, setActiveTab, onGenerateQuizFromSchedule }) => {
         }
       });
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to fetch history');
