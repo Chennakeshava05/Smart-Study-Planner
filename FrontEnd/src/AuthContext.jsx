@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { parseJsonResponse } from './api';
 
 const AuthContext = createContext();
 
@@ -25,7 +26,7 @@ export const AuthProvider = ({ children }) => {
       })
       .then(response => {
         if (response.ok) {
-          return response.json();
+          return parseJsonResponse(response);
         }
         throw new Error('Token invalid');
       })
@@ -56,7 +57,7 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ email, password })
       });
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(data.error || 'Login failed');
@@ -82,7 +83,7 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ email, password, name })
       });
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(data.error || 'Signup failed');
@@ -114,7 +115,7 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ email })
       });
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to send reset email');
@@ -136,7 +137,7 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({ token, newPassword })
       });
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (!response.ok) {
         throw new Error(data.error || 'Password reset failed');
