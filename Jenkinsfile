@@ -11,13 +11,15 @@ pipeline {
     }
 
     stages {
+        
         stage('Check Environment') {
             steps {
                 bat 'node --version'
                 bat 'npm --version'
-                bat 'git --version'
+                bat '"C:\\Users\\GChennakeshavaReddy\\AppData\\Local\\Programs\\Git\\cmd\\git.exe" --version'
             }
         }
+
 
         stage('Install Frontend Dependencies') {
             steps {
